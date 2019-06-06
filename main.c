@@ -10,10 +10,7 @@ struct elt {
 };
 
 int main(void) {
-	printf("hello world!\n");
-
 	link head = LIST_HEAD_INIT(head);
-	//LIST_HEAD(head);
 	INIT_LIST_HEAD(&head);
 
 	printf("Chaine vide ? %d\n",queue_empty(&head));
@@ -35,8 +32,7 @@ int main(void) {
 	printf("On ajoute un element\n");
 	queue_add(&e3, &head, struct elt, lien, prio);
 
-	//link itLink;
-	struct elt* iterateur;// = {0, itLink, 0};
+	struct elt* iterateur;
 	queue_for_each(iterateur, &head, struct elt, lien)
 		printf("Elt = %d\n", iterateur->val);
 }
